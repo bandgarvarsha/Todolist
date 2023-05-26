@@ -48,7 +48,7 @@ const App = () => {
       // update user
       let copy = todos;
       copy[indexx] = tod;
-      // Object.assign(copy[indexx], tod);
+
       setTodos([...copy]);
       setEdit(false);
       setIndexx(null);
@@ -74,16 +74,6 @@ const App = () => {
       setTodos([...removeItem]);
     }
   };
-
-  // const handleComplete = (id) => {
-  //   let list = todos.map((task) => {
-  //     let item = {};
-  //     item = { ...task, complete: !task.complete };
-  //     return item;
-  //   });
-
-  //   setTodos(list);
-  // };
 
   return (
     <div>
@@ -119,15 +109,7 @@ const App = () => {
           {todos.map((todo, index) => (
             <tr>
               <td>
-                <input
-                  type="checkbox"
-                  complete={todo.complete}
-                  // onChange={() => handleComplete(todo.id)}
-                  // style={{
-                  //   listStyle: "none",
-                  //   textDecoration: todo.complete && "line-through",
-                  // }}
-                />
+                <input type="checkbox" complete={todo.complete} />
                 <span
                   style={todo.done ? { textDecoration: "line-through" } : null}
                 />
