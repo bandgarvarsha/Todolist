@@ -109,12 +109,21 @@ const App = () => {
           {todos.map((todo, index) => (
             <tr>
               <td>
-                <input type="checkbox" complete={todo.complete} />
-                <span
-                  style={todo.done ? { textDecoration: "line-through" } : null}
+                <input
+                  type="checkbox"
+                  complete={todo.complete}
+                  checked={todo.complete}
                 />
-                &nbsp;
-                {todo.task}
+                <span
+                  style={
+                    todo.complete
+                      ? { textDecoration: "line-through" }
+                      : { color: "#000" }
+                  }
+                >
+                  &nbsp;
+                  {todo.task}
+                </span>
               </td>
               <td>
                 <button
